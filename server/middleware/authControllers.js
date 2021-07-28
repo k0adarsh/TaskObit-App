@@ -31,6 +31,7 @@ exports.auth = (req, res, next) => {
         if (!verified)
             return res.status(401).json({ msg: "Token verification failed, authorization denied" });
 
+        // User Id added to request as user so it can be user further in the middleware calls.
         req.user = verified.id;
         next();
     } catch (err) {
