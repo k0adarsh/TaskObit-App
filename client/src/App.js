@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-
+import './index.css';
 import signupScreen from './Screens/SignUp';
 import loginScreen from './Screens/LogIn';
 import profileScreen from './Screens/Profile';

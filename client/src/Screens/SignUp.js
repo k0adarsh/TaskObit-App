@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import classes from './SignUp.module.css';
+import classes from './SignUp.css';
 
 const SignUpPage = ({ history }) => {
     const [displayName, setUsername] = useState("");
@@ -52,11 +52,11 @@ const SignUpPage = ({ history }) => {
         }
     };
     return (
-        <div className={classes.register_screen}>
-            <form onSubmit={registerHandler} className={classes.register_screen__form}>
-                <h3 className={classes.register_screen__title}>Register</h3>
+        <div className="register-screen">
+            <form onSubmit={registerHandler} className="register-screen__form">
+                <h3 className="register-screen__title">Register</h3>
                 {error && <span className="error-message">{error}</span>}
-                <div className={classes.form_group}>
+                <div className="form-group">
                     <label htmlFor="name">Username:</label>
                     <input
                         type="text"
@@ -67,7 +67,7 @@ const SignUpPage = ({ history }) => {
                         onChange={(e) => setUsername(e.target.value)}
                     />
                 </div>
-                <div className={classes.form_group}>
+                <div className="form-group">
                     <label htmlFor="email">Email:</label>
                     <input
                         type="email"
@@ -78,7 +78,7 @@ const SignUpPage = ({ history }) => {
                         onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
-                <div className={classes.form_group}>
+                <div className="form-group">
                     <label htmlFor="password">Password:</label>
                     <input
                         type="password"
@@ -90,7 +90,7 @@ const SignUpPage = ({ history }) => {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
-                <div className={classes.form_group}>
+                <div className="form-group">
                     <label htmlFor="confirmpassword">Confirm Password:</label>
                     <input
                         type="password"
@@ -102,11 +102,11 @@ const SignUpPage = ({ history }) => {
                         onChange={(e) => setConfirmPassword(e.target.value)}
                     />
                 </div>
-                <button type="submit" className={classes.btn + classes.btn_primary}>
+                <button type="submit" className="btn  btn-primary">
                     Register
                 </button>
 
-                <span className={classes.register_screen__subtext}>
+                <span className="register-screen__subtext">
                     Already have an account? <Link to="/login">Login</Link>
                 </span>
             </form>
