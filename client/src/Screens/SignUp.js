@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import classes from './SignUp.css';
+import './SignUp.css';
 
 const SignUpPage = ({ history }) => {
     const [displayName, setUsername] = useState("");
@@ -29,8 +29,7 @@ const SignUpPage = ({ history }) => {
         }
 
         try {
-            await axios.post(
-                "http://127.0.0.1:8000/api/users",
+            const resData = await axios.post("http://127.0.0.1:8000/api/users",
                 {
                     email,
                     password,
@@ -39,7 +38,7 @@ const SignUpPage = ({ history }) => {
                 },
                 config
             );
-
+            //console.log(resData);
             //localStorage.setItem("authToken", data.token);
 
             //history.push("/");
